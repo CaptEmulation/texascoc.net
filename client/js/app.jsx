@@ -8,8 +8,7 @@ import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import store from './store';
-import About from './views/About';
-import Discord from './views/Discord';
+import Chart from './views/Chart';
 import Contents from './views/Contents';
 
 global.jQuery = require ('jquery');
@@ -22,9 +21,8 @@ window.onload = () => {
     <Provider store={store}>
       <Router history={history}>
         <Route path="/" component={Contents}>
-          <IndexRedirect to="/discord" />
-          <Route path="about" component={About} />
-          <Route path="discord" component={Discord} />
+          <IndexRedirect to="/chart" />
+          <Route path="chart" component={Chart} />
         </Route>
       </Router>
     </Provider>,
