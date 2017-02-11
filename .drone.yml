@@ -1,9 +1,8 @@
 pipeline:
   build:
-    image: node:4.6.1
+    image: node:boron
     commands:
       - npm install
-      - npm run build
     when:
       branch: master
       event: push
@@ -11,9 +10,7 @@ pipeline:
   publish:
     image: plugins/docker
     registry: docker.soapbubble.online:5000
-    username: drone
-    password: cobBomGopabyocVi
-    repo: soapbubble/online
+    repo: docker.soapbubble.online:5000/texascoc/discord
     tag: latest
     when:
       branch: master

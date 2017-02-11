@@ -12,7 +12,13 @@ const initialState = {
   discord: {
     isInvite: false,
     isCaptcha: false,
-    inviteCode: '7Cu44CY',
+    invites: [{
+      name: 'Clash of Clans',
+      code: '7Cu44CY',
+    }, {
+      name: 'Clash Royale',
+      code: 'CR2GYP4',
+    }],
   },
 };
 

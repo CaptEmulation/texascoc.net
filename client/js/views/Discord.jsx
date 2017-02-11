@@ -12,12 +12,12 @@ function mapStateToProps({ discord }) {
   const {
     isCaptcha,
     isInvite,
-    inviteCode,
+    invites,
   } = discord;
   return {
     isCaptcha,
     isInvite,
-    inviteCode,
+    invites,
   };
 }
 
@@ -35,7 +35,7 @@ function mapDisptachToProps(dispatch) {
 const Discord = ({
   isCaptcha,
   isInvite,
-  inviteCode,
+  invites,
   requestInvite,
   captchaComplete,
 }) => (
@@ -55,14 +55,17 @@ const Discord = ({
         onChange={captchaComplete}
       />
     </div> : null}
-    {isInvite ? <div className="col-md-12">
+    {isInvite ? invites.map(({ code, name }) => (<div className="col-md-12">
       <br />
       <h2 className="centered">
-        <a href={`https://discord.gg/${inviteCode}`}>
-          {`https://discord.gg/${inviteCode}`}
+        {name}
+      </h2>
+      <h2 className="centered">
+        <a href={`https://discord.gg/${code}`}>
+          {`https://discord.gg/${code}`}
         </a>
       </h2>
-    </div> : null}
+    </div>)) : null}
     {isInvite ? <div className="col-md-12">
       <br /><br />
       <h3 className="centered">
@@ -78,7 +81,7 @@ const Discord = ({
       <div className="centered"><img role="presentation" src={mobile2} /></div>
       <br />
       <h3 className="centered">
-        And paste in the invite code {inviteCode}
+        And paste in the invite code.
       </h3>
     </div> : null}
   </div>
