@@ -14,10 +14,10 @@ const initialState = {
     isCaptcha: false,
     invites: [{
       name: 'Clash of Clans',
-      code: '7Cu44CY',
+      code: 'MgWbw7D',
     }, {
       name: 'Clash Royale',
-      code: 'CR2GYP4',
+      code: 'rTzSyW',
     }],
   },
 };

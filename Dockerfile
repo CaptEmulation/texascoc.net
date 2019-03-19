@@ -1,4 +1,4 @@
-FROM node:4.6.1
+FROM node:carbon
 COPY package.json /tmp/package.json
 RUN cd /tmp && npm install
 RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
